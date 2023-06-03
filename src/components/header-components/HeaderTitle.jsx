@@ -1,11 +1,13 @@
 import React from "react";
 
+import "/src/styles/header-component-styles/HeaderTitle.css";
+
 export function HeaderTitle() {
   return (
-    <div>
+    <div id="header-title">
       <img src="/assets/icons/website-icon.png" alt="Website Logo"></img>
       <h1>My Weather App</h1>
-      <h3>Made by Kevin Feng</h3>
+      <h6>Made by Kevin Feng</h6>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 body {
-  background-color: #EAEAEA;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bolder;
+  background-color: #eaeaea;
+  font-family: "Staatliches", sans-serif;
+  position: absolute;
+  width: 100%;
   margin: 0;
 }

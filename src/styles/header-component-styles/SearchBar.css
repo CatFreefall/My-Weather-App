@@ -1,0 +1,54 @@
+#search-bar {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#input-box {
+  font-family: "Roboto" sans-serif;
+
+  width: 80%;
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+  border: 0px;
+  padding: 0.4em;
+  font-size: 100%;
+
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+#input-box:focus {
+  outline: none;
+}
+
+#submit-city {
+  font-family: "Roboto" sans-serif;
+  font-size: 100%;
+  background-color: #ffffff;
+
+  height: 2em;
+  width: 3em;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  border: 0px;
+  border-left: 1px solid #bbbbbb;
+  padding: 0;
+  padding-top: 0.2em;
+
+  cursor: pointer;
+
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+#submit-city:hover {
+  background-color: #f2f2f2;
+}
+
+#search-icon {
+  width: 1.1em;
+  height: 1.1em;
+  
+  opacity: 0.4;
+}
