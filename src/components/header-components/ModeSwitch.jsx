@@ -4,9 +4,12 @@ import "/src/styles/header-component-styles/ModeSwitch.css";
 
 export function ModeSwitch() {
   return (
-    <label id="switch">
-      <input type="checkbox" />
-      <span id="slider"></span>
-    </label>
+    <div id="slider-div">
+      <label id="toggle">
+        <input id="toggle-checkbox" type="checkbox" />
+        <div id="toggle-switch"></div>
+        <span id="toggle-label"></span>
+      </label>
+    </div>
   );
 }

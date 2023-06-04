@@ -1,0 +1,52 @@
+#slider-div {
+  display: flex;
+  justify-content: center;
+}
+
+#toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#toggle-checkbox {
+  display: none;
+}
+
+#toggle-switch {
+  display: inline-block;
+  background: rgba(256, 256, 256, 0.9);
+  border-radius: 1em;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+  box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#toggle-switch:before,
+#toggle-switch:after {
+  content: "";
+}
+
+#toggle-switch:before {
+  background: #AAA;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 1px 3px 7px 0 rgba(0, 0, 0, 0.2);
+  width: 1.5em;
+  height: 1.5em;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  transition: left 0.25s;
+}
+
+#toggle-checkbox:checked + #toggle-switch {
+  background: #656565;
+}
+
+#toggle-checkbox:checked + #toggle-switch:before {
+  background: #383838;
+  left: 2.25em;
+}
