@@ -22,3 +22,9 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+@media screen and (max-width: 1200px) {
+  #header-title > h6 {
+    display: none;
+  }
+}

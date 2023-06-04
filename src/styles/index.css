@@ -1,7 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Staatliches", sans-serif;
+}
+
 body {
   background-color: #eaeaea;
-  font-family: "Staatliches", sans-serif;
   position: absolute;
   width: 100%;
-  margin: 0;
+
+  background-image: url(/assets/images/website-background-cropped.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: 5.5em;
 }

@@ -30,7 +30,7 @@
 }
 
 #toggle-switch:before {
-  background: #AAA;
+  background: #aaa;
   display: block;
   border-radius: 50%;
   box-shadow: 1px 3px 7px 0 rgba(0, 0, 0, 0.2);
