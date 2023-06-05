@@ -1,13 +1,17 @@
 import React from "react";
 
-export function Forecast() {
+import "/src/styles/Forecast.css";
+
+import { ForecastInfo } from "./forecast-info-components/ForecastInfo";
+
+export function Forecast({ title }) {
   return (
-    <div>
-      <div>
-        <h1>Todays Hourly Forecast</h1>
+    <div id="forecast">
+      <div id="top-rectangle">
+        <h2>{title}</h2>
       </div>
-      <div>There should be a list displaying forecast by the hour here.</div>
-      <div></div>
+      <ForecastInfo />
+      <div id="bottom-rectangle"></div>
     </div>
   );
 }

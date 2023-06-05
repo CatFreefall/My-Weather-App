@@ -1,0 +1,7 @@
+#page-layout {
+  display: grid;
+}
+
+#forecast-displays {
+  display: flex;
+}

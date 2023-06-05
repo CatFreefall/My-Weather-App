@@ -12,7 +12,12 @@ export default function App() {
     <div id="page-layout">
       <Header />
       <CityInfo />
-      <Forecast />
+
+      {/* passing in props that will serve as titles */}
+      <div id="forecast-displays">
+        <Forecast title="Today's Hourly Forecast" />
+        <Forecast title="7 Day Forecast" />
+      </div>
     </div>
   );
 }
