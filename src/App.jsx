@@ -15,8 +15,8 @@ export default function App() {
 
       {/* passing in props that will serve as titles */}
       <div id="forecast-displays">
-        <Forecast title="Today's Hourly Forecast" />
-        <Forecast title="7 Day Forecast" />
+        <Forecast title="Today's Hourly Forecast" sliderWidth="59em"/>
+        <Forecast title="7 Day Forecast" sliderWidth="35em"/>
       </div>
     </div>
   );
