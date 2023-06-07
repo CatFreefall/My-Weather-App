@@ -2,9 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "city-name city-name condition-icon"
+    "city-name city-name city-name"
     "condition wind-speed condition-icon"
-    "temperature wind-angle condition-icon";
+    "temperature wind-direction condition-icon";
   width: 35%;
   margin: 1em 0em 0em 2em;
   padding: 1em;
@@ -35,6 +35,9 @@
 
 #condition-icon {
   grid-area: condition-icon;
+  align-self: center;
+  justify-self: center;
+  transform: scale(2);
 }
 
 #condition {
@@ -45,6 +48,6 @@
   grid-area: temperature;
 }
 
-#wind-angle {
-  grid-area: wind-angle;
+#wind-direction {
+  grid-area: wind-direction;
 }

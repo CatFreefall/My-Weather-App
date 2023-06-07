@@ -13,7 +13,7 @@ export function Forecast({ title, sliderWidth }) {
       <div id="top-rectangle">
         <h2>{title}</h2>
       </div>
-      <div id="splide-slider">
+      <div id="carousel">
         <Splide
           aria-label="My Favorite Images"
           options={{
@@ -21,6 +21,7 @@ export function Forecast({ title, sliderWidth }) {
             fixedHeight: "6rem",
             gap: "1.5em",
             padding: "1.5em",
+            releaseWheel: true,
           }}
         >
           <SplideSlide className="slide">
