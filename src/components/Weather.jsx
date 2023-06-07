@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 import { CityInfo } from "./CityInfo";
+import { Forecast } from "./Forecast";
 
 export const Weather = ({ city }) => {
   const [currentData, setCurrentData] = useState(null);
@@ -43,13 +44,13 @@ export const Weather = ({ city }) => {
 
     const sortWeatherData = async () => {
       const weatherData = await fetchWeather(city);
+
       const hourlyData = {
         time: [],
         temp: [],
         condition: [],
         icon: [],
       };
-
       const currentData = {
         cityName:
           weatherData.location.name + " | " + weatherData.location.country,
@@ -75,19 +76,30 @@ export const Weather = ({ city }) => {
     sortWeatherData();
   }, []);
 
-  //Waiting for fetch to complete and currentData to be set
-  if (!currentData) {
+  //Waiting for fetch to complete
+  if (!currentData | !dataByHours) {
     return <CityInfo />;
   }
 
   return (
-    <CityInfo
-      cityName={currentData.cityName}
-      condIcon={currentData.icon}
-      cond={currentData.condition}
-      windSpeed={currentData.windSpeed}
-      temp={currentData.temperature}
-      windDirection={currentData.windDirection}
-    />
+    <>
+      <CityInfo
+        cityName={currentData.cityName}
+        condIcon={currentData.icon}
+        cond={currentData.condition}
+        windSpeed={currentData.windSpeed}
+        temp={currentData.temperature}
+        windDirection={currentData.windDirection}
+      />
+      {/* passing in props that will serve as titles */}
+      <div id="forecast-displays">
+        <Forecast
+          title="Today's Hourly Forecast"
+          sliderWidth="59em"
+          weatherInfo={dataByHours}
+        />
+        <Forecast title="7 Day Weather History" sliderWidth="35em" weatherInfo={dataByHours}/>
+      </div>
+    </>
   );
 };

@@ -14,12 +14,6 @@ export default function App() {
       <Header />
       {/*TODO: MAKE SEARCH BAR FUNCTIONAL LATER AND PASS THE USER INPUT AS A PROP HERE*/}
       <Weather city={"Toronto"} />
-
-      {/* passing in props that will serve as titles */}
-      <div id="forecast-displays">
-        <Forecast title="Today's Hourly Forecast" sliderWidth="59em" />
-        <Forecast title="7 Day Weather History" sliderWidth="35em" />
-      </div>
     </div>
   );
 }

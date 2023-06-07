@@ -1,17 +1,19 @@
-#forecast-info {
+.forecast-info {
   background-color: rgba(234, 234, 234, 0.6);
   border-radius: 0.3em;
   margin: 0.7em 0 0.7em 0;
   box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  height: fit-content;
 }
 
-#single-panel {
+.panel-top-rectangle {
   display: flex;
   justify-content: center;
 
   background-color: #c6c6c6;
   border-radius: 0.3em;
   padding: 0.4em;
+  height: fit-content;
 }
 
 #max-temp {

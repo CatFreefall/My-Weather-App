@@ -17,7 +17,7 @@ export function CityInfo({
         <h1>{cityName}</h1>
       </div>
       <div id="condition-icon">
-        <img src={condIcon} alt="Icon for Weather Condition"></img>
+        <img src={condIcon} alt="Icon"></img>
       </div>
       <h6 id="condition">Condition: {cond}</h6>
       <h6 id="wind-speed">Wind Speed: {windSpeed}</h6>
