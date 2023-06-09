@@ -5,12 +5,17 @@ import { ModeSwitch } from "./header-components/ModeSwitch";
 
 import "/src/styles/Header.css";
 
-export function Header() {
+export function Header({ onSearch }) {
+  const searchCity = (searchValue) => {
+    // Access the search value and perform necessary actions
+    console.log("Search value:", searchValue);
+  };
+
   return (
     <div id="header">
       <HeaderTitle />
-      <SearchBar />
+      <SearchBar onSearch={onSearch}/>
       <ModeSwitch />
     </div>
-  )
+  );
 }

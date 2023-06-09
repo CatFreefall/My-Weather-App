@@ -50,7 +50,7 @@ export const Weather = ({ city }) => {
         icon: weatherData.current.condition.icon,
         condition: weatherData.current.condition.text,
         windSpeed: weatherData.current.wind_kph + " km/h",
-        temperature: weatherData.current.temp_c + "°C",
+        temperature: weatherData.current.temp_c + " °C",
         windDirection: weatherData.current.wind_dir,
       };
 
@@ -88,7 +88,7 @@ export const Weather = ({ city }) => {
     };
 
     sortCurrentData();
-  }, []);
+  }, [city]);
 
   //Waiting for fetch to complete
   if (!currentData | !dataByHours) {

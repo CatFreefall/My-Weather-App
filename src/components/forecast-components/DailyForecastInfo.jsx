@@ -11,8 +11,8 @@ export function DailyForecastInfo({ time, icon, maxTemp, minTemp }) {
       <div className="weather-icon-div">
         <img className="weather-icon" src={icon} alt="weather-icon" />
       </div>
-      <h4 className="max-temp">{maxTemp}</h4>
-      <h4 className="min-temp">{minTemp}</h4>
+      <h4 className="max-temp">{maxTemp} °C</h4>
+      <h4 className="min-temp">{minTemp} °C</h4>
     </div>
   );
 }

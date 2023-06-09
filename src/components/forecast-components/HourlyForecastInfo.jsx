@@ -12,7 +12,7 @@ export function HourlyForecastInfo({ condition, icon, temp, time }) {
         <img className="weather-icon" src={icon} alt="weather-icon" />
       </div>
       <h4 className="condition">{condition}</h4>
-      <h4 className="temp">{temp}</h4>
+      <h4 className="temp">{temp} °C</h4>
     </div>
   );
 }
