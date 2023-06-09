@@ -1,17 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
+import "/src/styles/Weather.css";
+
 import { CityInfo } from "./CityInfo";
-import { Forecast } from "./Forecast";
+import { HourlyForecast } from "./forecast-components/HourlyForecast";
+import { DailyForecast } from "./forecast-components/DailyForecast";
 
 export const Weather = ({ city }) => {
   const [currentData, setCurrentData] = useState(null);
-  const [dataByHours, setDataByHours] = useState({
-    time: [],
-    temp: [],
-    condition: [],
-    icon: [],
-  });
+  const [dataByHours, setDataByHours] = useState(null);
+  const [dayForecast, setDayForecast] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async (location) => {
@@ -22,7 +21,7 @@ export const Weather = ({ city }) => {
       const host = "http://api.weatherapi.com/v1/forecast.json?";
       const key = "c9ea430da233494d80d231236222412";
       const city = location;
-      const days = "1";
+      const days = "3";
       const callURL =
         host +
         "key=" +
@@ -42,15 +41,9 @@ export const Weather = ({ city }) => {
       }
     };
 
-    const sortWeatherData = async () => {
+    const sortCurrentData = async () => {
       const weatherData = await fetchWeather(city);
 
-      const hourlyData = {
-        time: [],
-        temp: [],
-        condition: [],
-        icon: [],
-      };
       const currentData = {
         cityName:
           weatherData.location.name + " | " + weatherData.location.country,
@@ -61,19 +54,40 @@ export const Weather = ({ city }) => {
         windDirection: weatherData.current.wind_dir,
       };
 
-      const dataByHours = weatherData.forecast.forecastday[0].hour;
-      dataByHours.forEach((hour) => {
+      const hourlyData = {
+        time: [],
+        temp: [],
+        condition: [],
+        icon: [],
+      };
+      const hourNumber = weatherData.forecast.forecastday[0].hour;
+      hourNumber.forEach((hour) => {
         hourlyData.time.push(hour.time);
         hourlyData.temp.push(hour.temp_c);
         hourlyData.condition.push(hour.condition.text);
         hourlyData.icon.push(hour.condition.icon);
       });
 
+      const dayForecast = {
+        day: [],
+        maxTemp: [],
+        minTemp: [],
+        icon: [],
+      };
+      const dayNumber = weatherData.forecast.forecastday;
+      dayNumber.forEach((day) => {
+        dayForecast.day.push(day.date);
+        dayForecast.maxTemp.push(day.day.maxtemp_c);
+        dayForecast.minTemp.push(day.day.mintemp_c);
+        dayForecast.icon.push(day.day.condition.icon);
+      });
+
       setCurrentData(currentData);
       setDataByHours(hourlyData);
+      setDayForecast(dayForecast);
     };
 
-    sortWeatherData();
+    sortCurrentData();
   }, []);
 
   //Waiting for fetch to complete
@@ -93,12 +107,16 @@ export const Weather = ({ city }) => {
       />
       {/* passing in props that will serve as titles */}
       <div id="forecast-displays">
-        <Forecast
+        <HourlyForecast
           title="Today's Hourly Forecast"
-          sliderWidth="59em"
+          sliderWidth="50em"
           weatherInfo={dataByHours}
         />
-        <Forecast title="7 Day Weather History" sliderWidth="35em" weatherInfo={dataByHours}/>
+        <DailyForecast
+          title="3 Day Forecast"
+          sliderWidth="24em"
+          weatherInfo={dayForecast}
+        />
       </div>
     </>
   );

@@ -6,11 +6,12 @@
 #input-box {
   opacity: 80%;
   width: 75%;
+  padding: 0.4em;
+
+  border: 0px;
   border-top-left-radius: 0.2em;
   border-bottom-left-radius: 0.2em;
-  border: 0px;
-  padding: 0.4em;
-  font-size: 85%;
+  font-size: 75%;
   font-family: 'Poppins', 'Arial', sans-serif;
 
   box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
@@ -31,7 +32,7 @@
   opacity: 80%;
   background-color: #ffffff;
 
-  height: 2em;
+  height: 1.75em;
   width: 3em;
   border-top-right-radius: 0.2em;
   border-bottom-right-radius: 0.2em;

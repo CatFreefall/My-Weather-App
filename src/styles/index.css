@@ -1,8 +1,8 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Staatliches", sans-serif;
-}
+  font-family: "Staatliches", sans-serif;}
 
 body {
   background-color: #eaeaea;
@@ -13,5 +13,5 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position-y: 5.5em;
+  background-position-y: 4.6em;
 }

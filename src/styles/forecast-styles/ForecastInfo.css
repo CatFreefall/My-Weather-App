@@ -1,0 +1,54 @@
+.forecast-info {
+  background-color: rgba(234, 234, 234, 0.6);
+  border-radius: 0.3em;
+  margin: 0.7em 0 0.7em 0;
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  height: 13em;
+}
+
+.panel-top-rectangle {
+  display: flex;
+  justify-content: center;
+
+  background-color: #c6c6c6;
+  border-radius: 0.3em;
+  padding: 0.4em;
+  height: fit-content;
+}
+
+.weather-icon-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0 1em 0;
+}
+
+.condition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0 1em 0;
+}
+
+.max-temp {
+  color: #f67d7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.min-temp {
+  color: #8bc6e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0 1em 0;
+}

@@ -1,17 +1,19 @@
 #header-title > img {
-  width: 2em;
-  height: 2em;
+  width: 1.7em;
+  height: 1.7em;
   align-self: flex-start;
   margin: 0.3em 0.3em 0.3em 0.3em;
 }
 
 #header-title > h1 {
   margin: 0.1em 0 0 0;
+  font-size: 1.7em;
 }
 
 #header-title > h6 {
-  margin: 0 0 0.6em 0;
+  margin: 0 0 0.5em 0;
   align-self: flex-end;
+  font-size: 0.6em;
 }
 
 #header-title {
