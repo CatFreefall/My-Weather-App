@@ -1,0 +1,29 @@
+#suggestions-list {
+  position: absolute;
+  top: inherit;
+  left: 0;
+  width: 75%;
+  background-color: #ffffff;
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+#single-suggestion {
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: small;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+#single-suggestion:hover {
+  cursor: pointer;
+
+  background-color: #f2f2f2;
+  opacity: 90%;
+}
+
+#suggestion-divider {
+  width: 95%;
+  border-top: 1px solid #eeeeee;
+  margin: auto;
+}

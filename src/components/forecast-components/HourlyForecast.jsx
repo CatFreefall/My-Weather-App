@@ -22,6 +22,7 @@ export function HourlyForecast({ title, sliderWidth, weatherInfo }) {
     }
   }, [weatherInfo]);
 
+  // function to create a splide slide for each day in the forecast
   const forecastComponents = weatherInfo.time.map((time, index) => (
     <SplideSlide className="splide-slides" key={time}>
       <HourlyForecastInfo

@@ -22,6 +22,7 @@ export function DailyForecast({ title, sliderWidth, weatherInfo }) {
     }
   }, [weatherInfo]);
 
+  // function to create a splide slide for each day in the forecast
   const forecastComponents = weatherInfo.day.map((day, index) => (
     <SplideSlide className="splide-slides" key={day}>
       <DailyForecastInfo

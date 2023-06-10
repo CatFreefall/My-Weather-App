@@ -12,7 +12,10 @@ export const Weather = ({ city }) => {
   const [dataByHours, setDataByHours] = useState(null);
   const [dayForecast, setDayForecast] = useState(null);
 
+  // updates everything when city changes
   useEffect(() => {
+
+    //fetching data for specified city
     const fetchWeather = async (location) => {
       const options = {
         method: "GET",
@@ -41,6 +44,7 @@ export const Weather = ({ city }) => {
       }
     };
 
+    // format data function. Async is needed to wait for data to be fetched
     const sortCurrentData = async () => {
       const weatherData = await fetchWeather(city);
 
@@ -54,6 +58,7 @@ export const Weather = ({ city }) => {
         windDirection: weatherData.current.wind_dir,
       };
 
+      // formatting hourly data into an object
       const hourlyData = {
         time: [],
         temp: [],
@@ -68,6 +73,7 @@ export const Weather = ({ city }) => {
         hourlyData.icon.push(hour.condition.icon);
       });
 
+      // more formatting but for the 3 day forecast data
       const dayForecast = {
         day: [],
         maxTemp: [],
