@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 
 import "/src/styles/forecast-styles/Forecast.css";
 import "/src/styles/forecast-styles/splide.min.css";
@@ -9,19 +9,29 @@ import { DailyForecastInfo } from "./DailyForecastInfo";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 export function DailyForecast({ title, sliderWidth, weatherInfo }) {
-  const forecastComponents = [];
-  for (let day = 0; day < weatherInfo.day.length; day++) {
-    forecastComponents.push(
-      <SplideSlide className="splide-slides" key={weatherInfo.day}>
-        <DailyForecastInfo
-          time={weatherInfo.day[day]}
-          icon={weatherInfo.icon[day]}
-          maxTemp={weatherInfo.maxTemp[day]}
-          minTemp={weatherInfo.minTemp[day]}
-        />
-      </SplideSlide>
-    );
-  }
+  const splideRef = useRef(null);
+
+  // Remove all slides from the Splide component
+  useEffect(() => {
+    if (splideRef.current) {
+      const splideInstance = splideRef.current.splide;
+      if (splideInstance) {
+        splideInstance.destroy();
+        splideInstance.mount();
+      }
+    }
+  }, [weatherInfo]);
+
+  const forecastComponents = weatherInfo.day.map((day, index) => (
+    <SplideSlide className="splide-slides" key={day}>
+      <DailyForecastInfo
+        time={day}
+        icon={weatherInfo.icon[index]}
+        maxTemp={weatherInfo.maxTemp[index]}
+        minTemp={weatherInfo.minTemp[index]}
+      />
+    </SplideSlide>
+  ));
 
   return (
     <div id="forecast" style={{ width: sliderWidth }}>
@@ -38,6 +48,7 @@ export function DailyForecast({ title, sliderWidth, weatherInfo }) {
           padding: "1.5em",
           releaseWheel: true,
         }}
+        ref={splideRef}
       >
         {forecastComponents}
       </Splide>

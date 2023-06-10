@@ -5,8 +5,9 @@ import "/src/styles/header-component-styles/SearchBar.css";
 export function SearchBar({ onSearch }) {
   const [search, setSearch] = React.useState("");
 
-  const changeInput = (e) => {
+  const getCurrentInput = (e) => {
     setSearch(e.target.value);
+    console.log("CURRENT TEXT INPUTTED", e.target.value);
   };
 
   const submitInput = (e) => {
@@ -23,7 +24,7 @@ export function SearchBar({ onSearch }) {
           placeholder="Search for a City..."
           name="search"
           value={search}
-          onChange={changeInput}
+          onChange={getCurrentInput}
           action=""
         ></input>
         <button id="submit-city" type="submit">

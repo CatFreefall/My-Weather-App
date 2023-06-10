@@ -7,7 +7,6 @@ import "/src/styles/Header.css";
 
 export function Header({ onSearch }) {
   const searchCity = (searchValue) => {
-    // Access the search value and perform necessary actions
     console.log("Search value:", searchValue);
   };
 
