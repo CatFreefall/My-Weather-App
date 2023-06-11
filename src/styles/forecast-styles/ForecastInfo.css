@@ -17,17 +17,18 @@
 }
 
 .weather-icon-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em 0 1em 0;
+  margin: 1em auto 1em auto;
+  padding: 0.4em;
+  background-color: #d9d9d9;
+  border-radius: 0.4em;
+  width: fit-content;
 }
 
 .condition {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5em 0 0.5em 0;
+  margin: 0.5em auto 0.5em auto;
 }
 
 .temp {
@@ -51,4 +52,22 @@
   justify-content: center;
   align-items: center;
   padding: 0.5em 0 1em 0;
+}
+
+#dark-mode-info {
+  background-color: rgba(40, 40, 40, 0.6);
+  transition: background-color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+}
+
+#dark-mode-panel-rect {
+  background-color: #393939;
+  transition: background-color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+}
+
+#dark-mode-icon-div {
+  background-color: #262626;
+  transition: background-color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
 }

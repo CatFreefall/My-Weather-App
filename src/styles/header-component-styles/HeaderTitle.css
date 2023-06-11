@@ -30,3 +30,8 @@
     display: none;
   }
 }
+
+.dark-mode-header {
+  color: #e1e1e1;
+  transition: color 0.5s ease-in-out, color 0.5s ease-in-out;
+}

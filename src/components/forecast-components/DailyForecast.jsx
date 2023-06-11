@@ -8,7 +8,7 @@ import { DailyForecastInfo } from "./DailyForecastInfo";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-export function DailyForecast({ title, sliderWidth, weatherInfo }) {
+export function DailyForecast({ title, sliderWidth, weatherInfo, darkMode }) {
   const splideRef = useRef(null);
 
   // Remove all slides from the Splide component
@@ -30,13 +30,18 @@ export function DailyForecast({ title, sliderWidth, weatherInfo }) {
         icon={weatherInfo.icon[index]}
         maxTemp={weatherInfo.maxTemp[index]}
         minTemp={weatherInfo.minTemp[index]}
+        darkMode={darkMode}
       />
     </SplideSlide>
   ));
 
   return (
-    <div id="forecast" style={{ width: sliderWidth }}>
-      <div id="top-rectangle">
+    <div
+      id="forecast"
+      style={{ width: sliderWidth }}
+      className={darkMode ? "dark-mode-forecast" : null}
+    >
+      <div className="top-rectangle" id={darkMode ? "dark-mode-rect" : null}>
         <h2>{title}</h2>
       </div>
 
@@ -54,7 +59,10 @@ export function DailyForecast({ title, sliderWidth, weatherInfo }) {
         {forecastComponents}
       </Splide>
 
-      <div id="bottom-rectangle"></div>
+      <div
+        className="bottom-rectangle"
+        id={darkMode ? "dark-mode-rect" : null}
+      ></div>
     </div>
   );
 }

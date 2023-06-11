@@ -11,14 +11,14 @@
   opacity: 80%;
   width: 75%;
   padding-left: 0.6em;
+  background-color: rgba(255, 255, 255, 0.7);
 
   border: 0px;
-  border-top-left-radius: 0.2em;
-  border-bottom-left-radius: 0.2em;
+  border-radius: 0.2em 0 0 0;
   font-size: 75%;
   font-family: "Poppins", "Arial", sans-serif;
 
-  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
 }
 
@@ -34,14 +34,14 @@
 #submit-city {
   font-size: 100%;
   opacity: 80%;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.7);
 
   height: 1.75em;
   width: 3em;
   border-top-right-radius: 0.2em;
   border-bottom-right-radius: 0.2em;
   border: 0px;
-  border-left: 1px solid #bbbbbb;
+  border-left: 1px solid rgba(150, 150, 150, 0.9);
   padding: 0;
   padding-top: 0.2em;
 

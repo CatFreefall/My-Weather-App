@@ -2,10 +2,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Staatliches", sans-serif;}
+  font-family: "Staatliches", sans-serif;
+}
 
 body {
   background-color: #eaeaea;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
   position: absolute;
   width: 100%;
 
@@ -14,4 +16,8 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position-y: 4.6em;
+}
+
+.dark-mode {
+  background-color: #252525;
 }

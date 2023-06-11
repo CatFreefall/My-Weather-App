@@ -20,7 +20,7 @@
   height: 1.75em;
   position: relative;
   vertical-align: middle;
-  transition: background 0.25s;
+  transition: background 2s;
   box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -39,7 +39,7 @@
   position: absolute;
   top: 0.25em;
   left: 0.25em;
-  transition: left 0.25s;
+  transition: left 0.5s;
 }
 
 #toggle-checkbox:checked + #toggle-switch {

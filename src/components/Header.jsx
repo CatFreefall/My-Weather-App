@@ -5,16 +5,13 @@ import { ModeSwitch } from "./header-components/ModeSwitch";
 
 import "/src/styles/Header.css";
 
-export function Header({ onSearch }) {
-  const searchCity = (searchValue) => {
-    console.log("Search value:", searchValue);
-  };
+export function Header({ onSearch, darkMode, toggleDarkMode }) {
 
   return (
     <div id="header">
-      <HeaderTitle />
-      <SearchBar onSearch={onSearch}/>
-      <ModeSwitch />
+      <HeaderTitle darkMode={darkMode}/>
+      <SearchBar onSearch={onSearch} />
+      <ModeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </div>
   );
 }

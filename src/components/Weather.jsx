@@ -7,14 +7,13 @@ import { CityInfo } from "./CityInfo";
 import { HourlyForecast } from "./forecast-components/HourlyForecast";
 import { DailyForecast } from "./forecast-components/DailyForecast";
 
-export const Weather = ({ city }) => {
+export const Weather = ({ city, darkMode }) => {
   const [currentData, setCurrentData] = useState(null);
   const [dataByHours, setDataByHours] = useState(null);
   const [dayForecast, setDayForecast] = useState(null);
 
   // updates everything when city changes
   useEffect(() => {
-
     //fetching data for specified city
     const fetchWeather = async (location) => {
       const options = {
@@ -111,17 +110,19 @@ export const Weather = ({ city }) => {
         temp={currentData.temperature}
         windDirection={currentData.windDirection}
       />
-      {/* passing in props that will serve as titles */}
+
       <div id="forecast-displays">
         <HourlyForecast
           title="Today's Hourly Forecast"
           sliderWidth="50em"
           weatherInfo={dataByHours}
+          darkMode={darkMode}
         />
         <DailyForecast
           title="3 Day Forecast"
           sliderWidth="24em"
           weatherInfo={dayForecast}
+          darkMode={darkMode}
         />
       </div>
     </>
